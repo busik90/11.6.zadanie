@@ -18,7 +18,29 @@ function Column(name) {
   this.$element = createColumn();
 
   function createColumn() {
-    
+    // create components of columns
+    var $column = $('<div>').addClass('column'),
+        $columnTitle = $('<h2>').addClass('column-title').text(self.name),
+        $columnCardList = $('<ul>').addClass('column-card-list'),
+        $columnDelete = $('<button>').addClass('btn-delete').text('x'),
+        $columnAddCard = $('<button>').addClass('add-card').text('Add a card');
+
+    // events
+    $columnDelete.click(function() {
+      self.removeColumn();
+    });
+    $columnAddCard.click(function() {
+      self.addCard(new Card(prompt("Enter the name of the card")));
+    });
+
+    // construct column
+    $column.append($columnTitle)
+           .append($columnDelete)
+           .append($columnAddCard)
+           .append($columnCardList);
+            
+    // return ready column
+    return $column;
   }
 }
 
