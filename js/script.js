@@ -73,7 +73,7 @@ $( function() {
 
       // construct card
       $card.append($cardDelete)
-            .append($cardDescription);
+           .append($cardDescription);
 
       return $card;
     }

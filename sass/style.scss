@@ -3,3 +3,50 @@
 @import 'box-sizing';
 @import 'reset';
 @import 'mixins';
+
+//-----variables-----
+
+$board-color: #f2ca5c;
+$board-border: 2px solid #d8b452;
+$board-radius: 5px;
+
+//-----code-----
+
+body {
+  width: 100vw;
+  font-family: sans-serif;
+}
+
+#board {
+  margin: 20px;
+}
+
+nav {
+  @include flex(stretch, flex-start);
+}
+
+.btn-add-board {
+  background-color: $board-color;
+  border: $board-border;
+  border-left: none;
+  border-bottom: none;
+  border-radius: 0 $board-radius 0 0;
+}
+
+.board-name {
+  display: inline-block;
+  padding: 5px 10px;
+  border: $board-border;
+  border-bottom: none;
+  background-color: $board-color;
+}
+
+.board-name:first-child {
+  border-radius: $board-radius 0 0 0;
+}
+
+.column-container {
+  padding: 10px 15px;
+  border: $board-border;
+  background-color: $board-color;
+}
