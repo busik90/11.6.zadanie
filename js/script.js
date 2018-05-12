@@ -56,27 +56,27 @@ $( function() {
   function Card(description) {
     var self = this;
 
-      this.id = randomString();
-      this.description = description;
-      this.$element = createCard();
+    this.id = randomString();
+    this.description = description;
+    this.$element = createCard();
 
-      function createCard() {
-        // create components of cards
-        var $card = $('<li>').addClass('card'),
-            $cardDescription = $('<p>').addClass('card-description').text(self.description),
-            $cardDelete = $('<button>').addClass('btn-delete').text('x');
+    function createCard() {
+      // create components of cards
+      var $card = $('<li>').addClass('card'),
+          $cardDescription = $('<p>').addClass('card-description').text(self.description),
+          $cardDelete = $('<button>').addClass('btn-delete').text('x');
 
-        // events      
-        $cardDelete.click(function(){
-          self.removeCard();
-        });
+      // events      
+      $cardDelete.click(function(){
+        self.removeCard();
+      });
 
-        // construct card
-        $card.append($cardDelete)
-             .append($cardDescription);
+      // construct card
+      $card.append($cardDelete)
+            .append($cardDescription);
 
-        return $card;
-      }
+      return $card;
+    }
   }
 
   Card.prototype = {
@@ -100,5 +100,29 @@ $( function() {
       placeholder: 'card-placeholder'
     }).disableSelection();
   }
+
+  $('.create-column').click(function() {
+    var name = prompt('Enter a column name');
+    var column = new Column(name);
+        board.addColumn(column);
+  });
+
+  // CREATING COLUMNS
+  var todoColumn = new Column('To do');
+  var doingColumn = new Column('Doing');
+  var doneColumn = new Column('Done');
+
+  // ADDING COLUMNS TO THE BOARD
+  board.addColumn(todoColumn);
+  board.addColumn(doingColumn);
+  board.addColumn(doneColumn);
+
+  // CREATING CARDS
+  var card1 = new Card('New task');
+  var card2 = new Card('Create kanban boards');
+
+  // ADDING CARDS TO COLUMNS
+  todoColumn.addCard(card1);
+  doingColumn.addCard(card2);
 
 });
