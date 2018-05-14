@@ -17,6 +17,10 @@ body {
   font-family: sans-serif;
 }
 
+.disable-events {
+  pointer-events: none;
+}
+
 #board {
   margin: 20px;
 }
@@ -25,12 +29,23 @@ nav {
   @include flex(stretch, flex-start);
 }
 
-.btn-add-board {
+.add-board-btn {
+  width: 25px;
+  padding: 0;
   background-color: $board-color;
   border: $board-border;
   border-left: none;
   border-bottom: none;
   border-radius: 0 $board-radius 0 0;
+
+  &:hover {
+    background-color: #d8b452;
+    cursor: pointer;    
+  }
+
+  &:active {
+    padding: 0;
+  }
 }
 
 .board-name {
@@ -39,6 +54,11 @@ nav {
   border: $board-border;
   border-bottom: none;
   background-color: $board-color;
+
+  &:hover {
+    background-color: #d8b452;
+    cursor: pointer;
+  }
 }
 
 .board-name:first-child {
@@ -46,7 +66,13 @@ nav {
 }
 
 .column-container {
+  @include flex(stretch, flex-start);
   padding: 10px 15px;
+  background-color: $board-color;  
   border: $board-border;
-  background-color: $board-color;
+  border-radius: 0 $board-radius $board-radius;
+
+  .add-column-btn {
+    order: 100;
+  }
 }

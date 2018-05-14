@@ -101,7 +101,7 @@ $( function() {
     }).disableSelection();
   }
 
-  $('.create-column').click(function() {
+  $('.add-column-btn').click(function() {
     var name = prompt('Enter a column name');
     var column = new Column(name);
         board.addColumn(column);

@@ -1,107 +1,46 @@
 /*-----box-sizing-----*/
-html {
-  box-sizing: border-box;
-}
+html { box-sizing: border-box; }
 
-*, *:before, *:after {
-  /* Safari/Chrome, other WebKit */
-  /* Firefox, other Gecko */
-  box-sizing: border-box;
-  /* Opera/IE 8+ */
-}
+*, *:before, *:after { /* Safari/Chrome, other WebKit */ /* Firefox, other Gecko */ box-sizing: border-box; /* Opera/IE 8+ */ }
 
 /*-----RESET CSS-----*/
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
 
-ol, ul {
-  list-style: none;
-}
+ol, ul { list-style: none; }
 
-blockquote, q {
-  quotes: none;
-}
+blockquote, q { quotes: none; }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
+table { border-collapse: collapse; border-spacing: 0; }
 
-body {
-  width: 100vw;
-  font-family: sans-serif;
-}
+body { width: 100vw; font-family: sans-serif; }
 
-#board {
-  margin: 20px;
-}
+.disable-events { pointer-events: none; }
 
-nav {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: stretch;
-      align-items: stretch;
-  -ms-flex-pack: start;
-      justify-content: flex-start;
-}
+#board { margin: 20px; }
 
-.btn-add-board {
-  background-color: #f2ca5c;
-  border: 2px solid #d8b452;
-  border-left: none;
-  border-bottom: none;
-  border-radius: 0 5px 0 0;
-}
+nav { display: -ms-flexbox; display: flex; -ms-flex-align: stretch; align-items: stretch; -ms-flex-pack: start; justify-content: flex-start; }
 
-.board-name {
-  display: inline-block;
-  padding: 5px 10px;
-  border: 2px solid #d8b452;
-  border-bottom: none;
-  background-color: #f2ca5c;
-}
+.add-board-btn { width: 25px; padding: 0; background-color: #f2ca5c; border: 2px solid #d8b452; border-left: none; border-bottom: none; border-radius: 0 5px 0 0; }
 
-.board-name:first-child {
-  border-radius: 5px 0 0 0;
-}
+.add-board-btn:hover { background-color: #d8b452; cursor: pointer; }
 
-.column-container {
-  padding: 10px 15px;
-  border: 2px solid #d8b452;
-  background-color: #f2ca5c;
-}
-/*# sourceMappingURL=style.css.map */
+.add-board-btn:active { padding: 0; }
+
+.board-name { display: inline-block; padding: 5px 10px; border: 2px solid #d8b452; border-bottom: none; background-color: #f2ca5c; }
+
+.board-name:hover { background-color: #d8b452; cursor: pointer; }
+
+.board-name:first-child { border-radius: 5px 0 0 0; }
+
+.column-container { display: -ms-flexbox; display: flex; -ms-flex-align: stretch; align-items: stretch; -ms-flex-pack: start; justify-content: flex-start; padding: 10px 15px; background-color: #f2ca5c; border: 2px solid #d8b452; border-radius: 0 5px 5px; }
+
+.column-container .add-column-btn { -ms-flex-order: 100; order: 100; }
