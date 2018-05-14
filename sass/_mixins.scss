@@ -3,3 +3,10 @@
   align-items: $align-items;
   justify-content: $justify-content;
 }
+
+@mixin font($siz: false, $wei: false, $col: false, $fam: false) {
+  @if $siz { font-size: $siz; }
+  @if $wei { font-weight: $wei; }
+  @if $col { color: $col }
+  @if $fam { font-family: $fam; }
+}
