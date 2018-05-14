@@ -1,3 +1,8 @@
+//-----FONTS-----
+
+@import url('https://fonts.googleapis.com/css?family=Kalam:400,700&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i&subset=latin-ext');
+
 //-----stylesheets-----
 
 @import 'box-sizing';
@@ -6,73 +11,101 @@
 
 //-----variables-----
 
-$board-color: #f2ca5c;
-$board-border: 2px solid #d8b452;
-$board-radius: 5px;
+$yellow: #f2ca5c;
+$dark-yellow: #dcb854;
+$orange: #ea7223;
+$green: #a1bf85;
+$blue: #484f7a;
+
+$border: 2px solid $dark-yellow;
+$radius: 5px;
+$col-margin: 0 5px;
+$col-padding: 5px;
 
 //-----code-----
 
 body {
   width: 100vw;
-  font-family: sans-serif;
+  font-family: 'Lato', sans-serif;
+  background: #fcd2ab url('../images/creampaper.png');
+  background-blend-mode: multiply;
 }
 
 .disable-events {
   pointer-events: none;
 }
 
+h1 {
+  @include font(1.5em, 700, normal, green, 'Kalam');
+  margin: 10px 20px;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 #board {
-  margin: 20px;
+  margin: 10px 20px;
 }
 
 nav {
   @include flex(stretch, flex-start);
-}
+  @include font(1.1em, 600, italic, #ea7223);
 
-.add-board-btn {
-  width: 25px;
-  padding: 0;
-  background-color: $board-color;
-  border: $board-border;
-  border-left: none;
-  border-bottom: none;
-  border-radius: 0 $board-radius 0 0;
-
-  &:hover {
-    background-color: #d8b452;
-    cursor: pointer;    
-  }
-
-  &:active {
+  .add-board-btn {
+    width: 25px;
     padding: 0;
+    background-color: $yellow;
+    border: $border;
+    border-left: none;
+    border-bottom: none;
+    border-radius: 0 $radius 0 0;
+  
+    &:hover {
+      background-color: #d8b452;
+      cursor: pointer;    
+    }
+  
+    &:active {
+      padding: 0;
+    }
   }
-}
 
-.board-name {
-  display: inline-block;
-  padding: 5px 10px;
-  border: $board-border;
-  border-bottom: none;
-  background-color: $board-color;
-
-  &:hover {
-    background-color: #d8b452;
-    cursor: pointer;
+  .board-name {
+    display: inline-block;
+    padding: 5px 10px;
+    border: $border;
+    border-bottom: none;
+    background-color: $yellow;
+  
+    &:hover {
+      background-color: #d8b452;
+      cursor: pointer;
+    }
   }
-}
 
-.board-name:first-child {
-  border-radius: $board-radius 0 0 0;
+  .board-name:first-child {
+    border-radius: $radius 0 0 0;
+  }
 }
 
 .column-container {
   @include flex(stretch, flex-start);
   padding: 10px 15px;
-  background-color: $board-color;  
-  border: $board-border;
-  border-radius: 0 $board-radius $board-radius;
+  background-color: $yellow;  
+  border: $border;
+  border-radius: 0 $radius $radius;
+
+  .column {
+    margin: $col-margin;
+    padding: $col-padding;
+    border: 2px solid $green;
+    border-radius: $radius;
+  }
 
   .add-column-btn {
+    @include font(1.6em, 300, $col: $blue);
+    cursor: pointer;
+    background-color: transparent;
     order: 100;
   }
 }

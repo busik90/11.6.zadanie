@@ -4,9 +4,10 @@
   justify-content: $justify-content;
 }
 
-@mixin font($siz: false, $wei: false, $col: false, $fam: false) {
+@mixin font($siz: false, $wei: false, $sty: false, $col: false, $fam: false) {
   @if $siz { font-size: $siz; }
   @if $wei { font-weight: $wei; }
+  @if $sty { font-style: $sty }
   @if $col { color: $col }
   @if $fam { font-family: $fam; }
 }

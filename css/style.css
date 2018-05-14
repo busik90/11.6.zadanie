@@ -1,46 +1,171 @@
+@import url("https://fonts.googleapis.com/css?family=Kalam:400,700&subset=latin-ext");
+@import url("https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i&subset=latin-ext");
 /*-----box-sizing-----*/
-html { box-sizing: border-box; }
+html {
+  box-sizing: border-box;
+}
 
-*, *:before, *:after { /* Safari/Chrome, other WebKit */ /* Firefox, other Gecko */ box-sizing: border-box; /* Opera/IE 8+ */ }
+*, *:before, *:after {
+  /* Safari/Chrome, other WebKit */
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+}
 
 /*-----RESET CSS-----*/
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
 
-ol, ul { list-style: none; }
+ol, ul {
+  list-style: none;
+}
 
-blockquote, q { quotes: none; }
+blockquote, q {
+  quotes: none;
+}
 
-blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
 
-table { border-collapse: collapse; border-spacing: 0; }
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
 
-body { width: 100vw; font-family: sans-serif; }
+body {
+  width: 100vw;
+  font-family: 'Lato', sans-serif;
+  background: #fcd2ab url("../images/creampaper.png");
+  background-blend-mode: multiply;
+}
 
-.disable-events { pointer-events: none; }
+.disable-events {
+  pointer-events: none;
+}
 
-#board { margin: 20px; }
+h1 {
+  font-size: 1.5em;
+  font-weight: 700;
+  font-style: normal;
+  color: green;
+  font-family: "Kalam";
+  margin: 10px 20px;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
 
-nav { display: -ms-flexbox; display: flex; -ms-flex-align: stretch; align-items: stretch; -ms-flex-pack: start; justify-content: flex-start; }
+#board {
+  margin: 10px 20px;
+}
 
-.add-board-btn { width: 25px; padding: 0; background-color: #f2ca5c; border: 2px solid #d8b452; border-left: none; border-bottom: none; border-radius: 0 5px 0 0; }
+nav {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: stretch;
+      align-items: stretch;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  font-size: 1.1em;
+  font-weight: 600;
+  font-style: italic;
+  color: #ea7223;
+}
 
-.add-board-btn:hover { background-color: #d8b452; cursor: pointer; }
+nav .add-board-btn {
+  width: 25px;
+  padding: 0;
+  background-color: #f2ca5c;
+  border: 2px solid #dcb854;
+  border-left: none;
+  border-bottom: none;
+  border-radius: 0 5px 0 0;
+}
 
-.add-board-btn:active { padding: 0; }
+nav .add-board-btn:hover {
+  background-color: #d8b452;
+  cursor: pointer;
+}
 
-.board-name { display: inline-block; padding: 5px 10px; border: 2px solid #d8b452; border-bottom: none; background-color: #f2ca5c; }
+nav .add-board-btn:active {
+  padding: 0;
+}
 
-.board-name:hover { background-color: #d8b452; cursor: pointer; }
+nav .board-name {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 2px solid #dcb854;
+  border-bottom: none;
+  background-color: #f2ca5c;
+}
 
-.board-name:first-child { border-radius: 5px 0 0 0; }
+nav .board-name:hover {
+  background-color: #d8b452;
+  cursor: pointer;
+}
 
-.column-container { display: -ms-flexbox; display: flex; -ms-flex-align: stretch; align-items: stretch; -ms-flex-pack: start; justify-content: flex-start; padding: 10px 15px; background-color: #f2ca5c; border: 2px solid #d8b452; border-radius: 0 5px 5px; }
+nav .board-name:first-child {
+  border-radius: 5px 0 0 0;
+}
 
-.column-container .add-column-btn { -ms-flex-order: 100; order: 100; }
+.column-container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: stretch;
+      align-items: stretch;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  padding: 10px 15px;
+  background-color: #f2ca5c;
+  border: 2px solid #dcb854;
+  border-radius: 0 5px 5px;
+}
+
+.column-container .column {
+  margin: 0 5px;
+  padding: 5px;
+  border: 2px solid #a1bf85;
+  border-radius: 5px;
+}
+
+.column-container .add-column-btn {
+  font-size: 1.6em;
+  font-weight: 300;
+  color: #484f7a;
+  cursor: pointer;
+  background-color: transparent;
+  -ms-flex-order: 100;
+      order: 100;
+}
+/*# sourceMappingURL=style.css.map */
