@@ -20,10 +20,11 @@ $( function() {
     function createColumn() {
       // create components of columns
       var $column = $('<div>').addClass('column'),
+          $columnHeader = $('<header>').addClass('column-header'),
           $columnTitle = $('<h2>').addClass('column-title').text(self.name),
           $columnCardList = $('<ul>').addClass('column-card-list'),
-          $columnDelete = $('<button>').addClass('btn-delete').text('x'),
-          $columnAddCard = $('<button>').addClass('add-card').text('Add a card');
+          $columnDelete = $('<button>').addClass('delete-column-btn').text('x'),
+          $columnAddCard = $('<button>').addClass('add-card-btn').text('+');
 
       // events
       $columnDelete.click(function() {
@@ -34,8 +35,10 @@ $( function() {
       });
 
       // construct column
-      $column.append($columnTitle)
-             .append($columnDelete)
+      $columnHeader.append($columnTitle)
+                   .append($columnDelete);
+                   
+      $column.append($columnHeader)
              .append($columnAddCard)
              .append($columnCardList);
               
@@ -64,7 +67,7 @@ $( function() {
       // create components of cards
       var $card = $('<li>').addClass('card'),
           $cardDescription = $('<p>').addClass('card-description').text(self.description),
-          $cardDelete = $('<button>').addClass('btn-delete').text('x');
+          $cardDelete = $('<button>').addClass('delete-card-btn').text('-');
 
       // events      
       $cardDelete.click(function(){
@@ -72,8 +75,8 @@ $( function() {
       });
 
       // construct card
-      $card.append($cardDelete)
-           .append($cardDescription);
+      $card.append($cardDescription)
+           .append($cardDelete);
 
       return $card;
     }
