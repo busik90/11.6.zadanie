@@ -1,7 +1,7 @@
 //-----FONTS-----
 
 @import url('https://fonts.googleapis.com/css?family=Kalam:400,700&subset=latin-ext');
-@import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i&subset=latin-ext');
 
 //-----stylesheets-----
 
@@ -67,7 +67,7 @@ h1 {
 
 nav {
   @include flex(stretch, flex-start);
-  @include font(1.1em, 700, italic, #ea7223);
+  @include font(1.1em, 700, italic, $orange);
 
   height: $nav-height;
 
