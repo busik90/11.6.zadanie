@@ -75,6 +75,8 @@ body {
 }
 
 button {
+  background-color: transparent;
+  border: none;
   cursor: pointer;
   padding: 0 .3rem;
 }
@@ -123,8 +125,9 @@ nav {
 nav .board-name {
   display: inline-block;
   padding: 0 .4em;
-  border: 3px solid #dcb854;
-  border-bottom: none;
+  border-top: 3px solid #dcb854;
+  border-right: 3px solid #dcb854;
+  border-left: 3px solid #dcb854;
   background-color: #f2ca5c;
 }
 
@@ -135,11 +138,10 @@ nav .board-name:first-child {
 nav .add-board-btn {
   font-size: 1em;
   color: #ea7223;
-  background-color: #f2ca5c;
-  border: 3px solid #dcb854;
-  border-left: none;
-  border-bottom: none;
+  border-top: 3px solid #dcb854;
+  border-right: 3px solid #dcb854;
   border-radius: 0 0.2em 0 0;
+  background-color: #f2ca5c;
 }
 
 .column-container {
@@ -196,29 +198,24 @@ nav .add-board-btn {
 }
 
 .column-container .column .column-header .delete-column-btn {
+  width: 1.15rem;
+  height: 1.2rem;
+  transform: scale(1.3, 1);
+  margin: -.05rem .1rem .15rem 0;
   font-size: 0.6rem;
   font-weight: 300;
   color: #ea7223;
-  transform: scale(1.3, 1);
-  background-color: transparent;
-  border: 3px solid #a1bf85;
-  border-top: none;
-  border-right: none;
+  border-bottom: 3px solid #a1bf85;
+  border-left: 3px solid #a1bf85;
   border-radius: 0 0.2em;
-  width: 1.15rem;
-  height: 1.2rem;
-  margin: -.05rem .1rem .15rem 0;
 }
 
 .column-container .column .add-card-btn {
   font-size: 1em;
   color: #ea7223;
-  border: 3px solid #a1bf85;
+  border-top: 3px solid #a1bf85;
+  border-bottom: 3px solid #a1bf85;
   border-bottom-style: dotted;
-  border-left: none;
-  border-right: none;
-  cursor: pointer;
-  background-color: transparent;
 }
 
 .column-container .column .column-card-list {
@@ -243,10 +240,10 @@ nav .add-board-btn {
 
 .column-container .column .column-card-list .card-description {
   min-height: 1em;
+  padding: .2em .4em;
   font-size: 0.6em;
   font-weight: 400;
   color: #3f456a;
-  padding: .2em .4em;
 }
 
 .column-container .column .column-card-list .delete-card-btn {
@@ -255,12 +252,14 @@ nav .add-board-btn {
   line-height: .5em;
   font-size: 1em;
   color: #ea7223;
-  background-color: transparent;
-  border: none;
   border-top: 3px solid #a1bf85;
 }
 
 .column-container .add-column-btn {
+  min-width: 100px;
+  padding: 0;
+  font-size: 1.6em;
+  color: #484f7a;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
@@ -269,11 +268,6 @@ nav .add-board-btn {
       justify-content: center;
   -ms-flex-flow: row;
       flex-flow: row;
-  font-size: 1.6em;
-  color: #484f7a;
-  min-width: 100px;
-  padding: 0;
-  background-color: transparent;
   -ms-flex-order: 100;
       order: 100;
 }

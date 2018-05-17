@@ -39,7 +39,9 @@ body {
 }
 
 button {
-  cursor: pointer;  
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
   padding: 0 .3rem;
   &:active {
     padding: 0 .3rem;
@@ -72,8 +74,7 @@ nav {
   .board-name {
     display: inline-block;
     padding: 0 .4em;
-    border: $border-container;
-    border-bottom: none;
+    @include border($border-container, 1, 1, 0, 1);
     background-color: $yellow;
   }
 
@@ -83,11 +84,9 @@ nav {
     
   .add-board-btn {
     @include font(1em, $col: $orange);
-    background-color: $yellow;
-    border: $border-container;
-    border-left: none;
-    border-bottom: none;
+    @include border($border-container, 1, 1, 0, 0);
     border-radius: 0 $radius 0 0;
+    background-color: $yellow;
   }
 }
 
@@ -120,27 +119,20 @@ nav {
       }
 
       .delete-column-btn {
-        @include font(.6rem, 300, $col: $orange);
-        transform: scale(1.3, 1);
-        background-color: transparent;
-        border: $border-column;
-        border-top: none;
-        border-right: none;
-        border-radius: 0 $radius;
         width: 1.15rem;
         height: 1.2rem;
+        transform: scale(1.3, 1);
         margin: -.05rem .1rem .15rem 0;
+        @include font(.6rem, 300, $col: $orange);
+        @include border($border-column, 0, 0, 1, 1);
+        border-radius: 0 $radius;
       }
     }
 
     .add-card-btn {
       @include font(1em, $col: $orange);
-      border: $border-column;
+      @include border($border-column, 1, 0, 1, 0);      
       border-bottom-style: dotted;
-      border-left: none;
-      border-right: none;
-      cursor: pointer;
-      background-color: transparent;
     }
 
     .column-card-list {
@@ -165,8 +157,8 @@ nav {
 
       .card-description {
         min-height: 1em;
+        padding: .2em .4em;        
         @include font(.6em, 400, $col: darken($blue, 5%));
-        padding: .2em .4em;
       }
 
       .delete-card-btn {
@@ -174,19 +166,16 @@ nav {
         height: 1em;
         line-height: .5em;
         @include font(1em, $col: $orange);
-        background-color: transparent;
-        border: none;
         border-top: $border-column;
       }
     }
   }
 
   .add-column-btn {
-    @include flex();
-    @include font(1.6em, $col: $blue);
     min-width: 100px;
     padding: 0;
-    background-color: transparent;
+    @include font(1.6em, $col: $blue);    
+    @include flex();
     order: 100;
   }
 }

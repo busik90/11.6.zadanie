@@ -12,3 +12,10 @@
   @if $col { color: $col }
   @if $fam { font-family: $fam; }
 }
+
+@mixin border($border, $top: false, $right: false, $bottom: false, $left: false) {
+  @if $top == 1 { border-top: $border; }
+  @if $right == 1 { border-right: $border; }
+  @if $bottom == 1 { border-bottom: $border; }
+  @if $left == 1 { border-left: $border; }
+}
